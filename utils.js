@@ -16,18 +16,15 @@ function mungeWeather(weatherObj) {
   return retArr;
 }
 
-function mungeYelp(reviewObj) {
-  let retArr = reviewObj.data.map(review => {
+function mungeYelp(review) {
+  for(let i = 0; i < 20; i++){
     return {
-      name: review.name,
-      image_url: review.image_url,
-      price: review.price,
-      rating: review.rating,
-      url: review.url
+      name: review[i].name,
+      image_url: review[i].image_url,
+      price: review[i].price,
+      rating: review[i].rating,
+      url: review[i].url
     };
-  });
-  for(let i = 0; i < 20; i++) {
-    return retArr[i];
   }
 }
 
