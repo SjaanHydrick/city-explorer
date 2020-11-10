@@ -5,10 +5,6 @@ function mungeLocation(location) {
     longitude: location[0].lon
   };
 }
-  
-module.exports = {
-  mungeLocation
-};
 
 function mungeWeather(weather) {
   return {
@@ -18,5 +14,5 @@ function mungeWeather(weather) {
 }
 
 module.exports = {
-  mungeWeather
+  mungeLocation, mungeWeather
 };
