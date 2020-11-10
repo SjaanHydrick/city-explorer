@@ -6,11 +6,14 @@ function mungeLocation(location) {
   };
 }
 
-function mungeWeather(weather) {
-  return {
-    forecast: weather.description,
-    time: weather.datetime,
-  };
+function mungeWeather(weatherObj) {
+  let retArr = weatherObj.data.map(weather => {
+    return {
+      forecast: weather.weather.description,
+      time: weather.datetime,
+    };
+  });
+  return retArr;
 }
 
 module.exports = {
