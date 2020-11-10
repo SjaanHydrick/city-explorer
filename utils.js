@@ -17,7 +17,8 @@ function mungeWeather(weatherObj) {
 }
 
 function mungeYelp(reviewObj) {
-  let retArr = reviewObj.data.map(review => {
+  let retArr = reviewObj.businesses.map(review => {
+
     return {
       name: review.name,
       image_url: review.image_url,
@@ -25,11 +26,8 @@ function mungeYelp(reviewObj) {
       rating: review.rating,
       url: review.url
     };
-});
-console.log(retArr);
-  for(let i = 0; i < 20; i++) {
-    return retArr[i];
-  }
+  });
+  return retArr.slice(0, 20);
 }
 
 module.exports = {
