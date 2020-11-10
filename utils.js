@@ -30,6 +30,24 @@ function mungeYelp(reviewObj) {
   return retArr.slice(0, 20);
 }
 
+function mungeHiking(hikingObj) {
+  let retArr = hikingObj.trails.map(hiking => {
+    return {
+      name: hiking.name,
+      location: hiking.location,
+      length: hiking.length,
+      stars: hiking.stars,
+      star_votes: hiking.star_votes,
+      summary: hiking.summary,
+      trail_url: hiking.trail_url,
+      conditions: hiking.conditions,
+      condition_date: hiking.condition_date,
+      condition_time: hiking.condition_time
+    };
+  });
+  return retArr;
+}
+
 module.exports = {
-  mungeLocation, mungeWeather, mungeYelp
+  mungeLocation, mungeWeather, mungeYelp, mungeHiking
 };
