@@ -37,12 +37,11 @@ function mungeHiking(hikingObj) {
       location: hiking.location,
       length: hiking.length,
       stars: hiking.stars,
-      star_votes: hiking.star_votes,
+      star_votes: hiking.starVotes,
       summary: hiking.summary,
-      trail_url: hiking.trail_url,
-      conditions: hiking.conditions,
-      condition_date: hiking.condition_date,
-      condition_time: hiking.condition_time
+      trail_url: hiking.url,
+      conditions: hiking.conditionStatus,
+      condition_date: hiking.conditionDate
     };
   });
   return retArr;
